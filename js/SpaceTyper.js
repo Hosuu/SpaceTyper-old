@@ -4,7 +4,7 @@ const ctx = canvas.getContext('2d');
 //Game Variables
 var input = "";
 
-var diff= 1;
+var diff= 0;
 
 var score = 0;
 var lives = 3;
