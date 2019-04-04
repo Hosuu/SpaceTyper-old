@@ -3,14 +3,31 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Space Typer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="main.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-</head>
-<body>
-    <canvas id="game-screen" width="1200" height="600"></canvas>
 
-    <script src="game.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/import.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="js/wordbase.js"></script>
+    <script src="js/star.js"></script>
+    <script src="js/text.js"></script>
+
+    <title>SpaceTyper</title>
+</head>
+<body onload="updateDisplay()">
+     
+    <div class="bar">
+        <div id="logo" class="bar-item size-2"><i class="fas fa-keyboard"></i> SpaceTyper</div>
+        <div id="score" class="bar-item size-4"></div>
+        <div class="bar-item size-1"><i class="fas fa-heart"></i> <span id="lives">3</span> Lives</div>
+        <div class="bar-item size-1"><i class="far fa-clock"></i> <span id="time">3:23</span></div>
+    </div>
+    <canvas id="game-screen" width="1920" height="820"></canvas>
+    <div class="bar">
+        <div class="bar-item size-1 button"><i class="fas fa-trophy"></i> Highscores</div>
+        <div class="bar-item size-3"><span id="input"></span></div>
+        <div class="bar-item size-1 button"><i class="fas fa-cogs"></i> Settings</div>
+    </div>
+    <script src="js/SpaceTyper.js"></script>
 </body>
 </html>
