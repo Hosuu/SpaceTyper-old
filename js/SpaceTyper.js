@@ -1,10 +1,47 @@
 const canvas = document.getElementById("game-screen");
 const ctx = canvas.getContext('2d');
 
+config={
+    
+    game:
+    {
+        difficulty: 3,
+        backgroundColor: "#050505",
+
+    },
+
+    text:
+    {
+        font: "Comfortaa",
+        size: 24,
+        style: "bold italic",   
+    },
+
+    stars:
+    {
+        render: true,
+        count: 120,
+        minSize: 4,
+        maxSize: 6,
+        color: "#fff",
+        rainbow: true,
+    }
+}
+
+loadFont();
+
+function loadFont()
+{
+    WebFont.load({
+        google: {
+            families: [config.text.font]
+        }
+    });
+}
+
+
 //Game Variables
 var input = "";
-
-var diff= 0;
 
 var score = 0;
 var lives = 3;
@@ -22,10 +59,11 @@ function tick() {
     lastUpdate = now;
 
     //Clear canvas
-    ctx.fillStyle = "#000"
-    ctx.clearRect(0,0, canvas.width, canvas.height);
+    ctx.fillStyle = config.game.backgroundColor;
+    ctx.fillRect(0,0, canvas.width, canvas.height);
 
     // Render stars
+    if(config.stars.render)
     stars.forEach(star => {
         star.update(dt);
         star.draw();
@@ -44,6 +82,7 @@ function tick() {
 $(document).keypress(button =>{
     input+=button.key;
     updateDisplay();
+    // new Audio(sfx.typing).play();
 })
 
 $(document).keydown(button =>{
@@ -69,10 +108,15 @@ function updateDisplay(){
 //Spawners
     //words
     setInterval(() => {
-        write(wordsbase[diff].words[Math.floor(Math.random()*wordsbase[diff].words.length)])
+        write(wordsbase[config.game.difficulty].words[Math.floor(Math.random()*wordsbase[config.game.difficulty].words.length)])
     }, 1000);
 
     //Stars
-    for (let i = 0; i < 50; i++) {
-        stars[i] = new Star(); 
+    function reRenderStars()
+    {
+        for (let i = 0; i < config.stars.count; i++) {
+            stars[i] = new Star(); 
+        }
     }
+    reRenderStars();
+    

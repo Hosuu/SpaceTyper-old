@@ -3,7 +3,7 @@ class Text{
     constructor(word)
     {
         this.x = -100;
-        this.y = Math.random()*(canvas.height-48)+24;
+        this.y = Math.random()*(canvas.height-config.text.size*2)+config.text.size;
         this.text = word;
     }
 
@@ -22,7 +22,7 @@ class Text{
     {
         ctx.fillStyle = "#fff";
         if(this.x > 1600) ctx.fillStyle = "#f00";
-        ctx.font = "20px Arial";
+        ctx.font = `${config.text.style} ${config.text.size}px '${config.text.font}'`;
         ctx.fillText(this.text,this.x,this.y);
     }
 }
