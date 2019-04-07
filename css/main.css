@@ -1,4 +1,4 @@
-body{
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,17 +9,23 @@ body{
     user-select: none;
 }
 
-.bar{
+.bar {
     position: fixed;
     left: 0;
     height: 12vh;
     width: 100vw;
     display: flex;
 }
-.bar:nth-of-type(1){top: 0;}
-.bar:nth-of-type(2){bottom: 0;}
 
-.bar-item{
+.bar:nth-of-type(1) {
+    top: 0;
+}
+
+.bar:nth-of-type(2) {
+    bottom: 0;
+}
+
+.bar-item {
     background: #222;
     line-height: 12vh;
     text-align: center;
@@ -27,9 +33,13 @@ body{
     color: #fff;
     flex-basis: 150px;
     flex-shrink: 0;
-}.bar-item:hover{background: #333;}
+}
 
-#game-screen{
+.bar-item:hover {
+    background: #333;
+}
+
+#game-screen {
     position: fixed;
     left: 50vw;
     top: 12vh;
@@ -41,18 +51,111 @@ body{
     border-right: 5px solid #555;
 }
 
-#logo{
-    text-align: left;
-    padding-left: 20px;
+#score {font-size: 7vh}
+
+.size-1 {flex-grow: 1}
+.size-2 {flex-grow: 2}
+.size-3 {flex-grow: 3}
+.size-4 {flex-grow: 4}
+
+.button {cursor: pointer}
+
+#settings{
+    position: fixed;
+    left: 100vw;
+    top: 12vh;
+    width: 100vw;
+    height: 76vh;
+    background: rgba(0, 0, 0, .8);
+    transition: left .8s ease;
 }
 
-#score{
-    font-size: 7vh;
+.settings-window{
+    position: absolute;
+    top: 5%;
+    bottom: 5%;
+    left: 30%;
+    right: 30%;
+    padding: 10px 15px;
+    background: #222;
+    border-radius: 15px;
 }
 
-.size-1{flex-grow:1}
-.size-2{flex-grow:2}
-.size-3{flex-grow:3}
-.size-4{flex-grow:4}
+.settings-title{
+    border-bottom: 1px solid #fff;
+    padding-bottom: 5px;
+    text-align: center;
+    height: 10%;
+    font-size: 4vh;
+    color: #fff;
+}
 
-.button{cursor: pointer;}
+.settings-options{
+    overflow-y: scroll;
+    height: 70%;
+    font-size: 20px;
+    font-style: normal;
+    text-shadow: none;
+    color: #fff;
+}
+.settings-label{
+    float:left;
+}
+
+.settings-input{
+    float:right;
+}
+
+.settings-divider{
+    margin: 30px 0;
+}
+
+.row{
+    margin: 0 5px;
+    padding: 10px 10px;
+}
+.row:hover{
+    background: #111;
+}
+
+.settings-submit{
+    height: 10%;
+    width: 70%;
+    padding-top: 15px;
+    margin: 0 auto;
+}
+
+.settings-button{
+    width: fit-content;
+    height: fit-content;
+    padding: 10px 15px;
+    background: #222;
+    border: 3px solid #555;
+    border-radius: 15px;
+    line-height: 100%;
+    font-size: 30px;
+    text-shadow: none;
+    font-style: normal;
+    color: #ccc;
+    cursor: pointer;
+}
+.settings-button:hover{
+    background: #111;
+}
+
+
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    display: none;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px; 
+  }
+  
