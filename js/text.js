@@ -16,8 +16,8 @@ class Text {
     }
 
     draw() {
-        ctx.fillStyle = "#fff";
-        if (this.x > 1600) ctx.fillStyle = "#f00";
+        ctx.fillStyle = config.text.color;
+        if (this.x > 1600) ctx.fillStyle = config.text.highlightColor;
 
         ctx.font = `${textStyle()}${config.text.size}px '${config.text.font}'`;
         ctx.fillText(this.text, this.x, this.y);

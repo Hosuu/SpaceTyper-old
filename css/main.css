@@ -111,6 +111,7 @@ body {
 }
 
 .row{
+    position: relative;
     margin: 0 5px;
     padding: 10px 10px;
 }
@@ -181,4 +182,15 @@ body {
     font-size: inherit;
     font-family: inherit;
     color: inherit;
+    text-align: center;
+}
+
+#settings-background{
+    border: none;
+    display: block;
+    outline: none; 
+    font-size: 0; 
+    height: 29px; 
+    width: 200px;
+    padding: 0px;
 }

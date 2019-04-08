@@ -19,6 +19,8 @@ config = {
     text: {
         font: "Comfortaa",
         size: 24,
+        color: "#ccc",
+        highlightColor: "#f00",
         bold: true,
         italic: true,
     },

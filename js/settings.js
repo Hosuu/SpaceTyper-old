@@ -10,27 +10,19 @@ function hideSettings()
     $('#settings').css("left", "100vw");
 }
 
-function higherdiff(){
-    config.game.difficulty++;
+function settingsDiff(value){
+    config.game.difficulty+=value;
     if(config.game.difficulty== 4)
-    config.game.difficulty = 0;
-    $('#settings-diff').html(difficulty[config.game.difficulty].name);
-}
-
-function lowerdiff(){
-    config.game.difficulty--;
+        config.game.difficulty = 0;
+    else 
     if(config.game.difficulty== -1)
-    config.game.difficulty = 3;
+        config.game.difficulty= 3;
+
     $('#settings-diff').html(difficulty[config.game.difficulty].name);
 }
 
-function biggerfont(){
-    config.text.size++;
-    $('#settings-font-size').html(`${config.text.size}px`);
-}
-
-function smallerfont(){
-    config.text.size--;
+function settingsFontSize(value){
+    config.text.size+=value;
     $('#settings-font-size').html(`${config.text.size}px`);
 }
 
@@ -70,16 +62,12 @@ function settingsTogle(propery)
     SettingsChecksUpdate();
 }
 
-
 function starsCount(value)
 {
     config.stars.count+=value;
     $('#settings-stars-count').html(`${config.stars.count}`);
     reRenderStars();
 }
-
-
-
 
 
 function loadFont() 
@@ -89,5 +77,15 @@ function loadFont()
             families: [config.text.font]
         }
     });
+}
+
+function settingsColor(jscolor, propery) {
+    switch(propery)
+    {
+        case 'starsColor': config.stars.color = `#${jscolor}`; reRenderStars(); break;
+        case 'BgColor': config.game.backgroundColor =`#${jscolor}`; break;
+        case 'textColor': config.text.color =`#${jscolor}`; break;
+        case 'textHighlightColor': config.text.highlightColor =`#${jscolor}`; break;
+    }
 }
 

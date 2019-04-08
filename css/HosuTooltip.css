@@ -1,0 +1,49 @@
+/* COOL FONT */
+@import url('https://fonts.googleapis.com/css?family=Nunito:300,400,600,700&subset=latin-ext');
+/* CONFIG */
+:root{
+
+    --background-color: #111;
+
+    --font-color: #ccc;
+    --dark-mode-color-font-color: rgb(233, 223, 168);
+
+    --tooltip-up-position: 3px;
+    --tooltip-down-position: -20px;
+
+}
+/* CONFIG */
+
+/* Don't Change anything */
+*[class*="tooltip"]:hover::before, *[class*="tooltip"]:hover::after{
+    position: absolute;
+    left: 50%;
+    background: var(--background-color, #111);
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+*[class*="tooltip"]:hover::before{
+    content: '';
+    transform: rotate(45deg) translateX(-50%);
+    width: 12px;
+    height: 12px;
+}
+*[class*="tooltip"]:hover::after{
+    content: attr(tooltip);
+    padding: 6px;
+    border-radius: 7px;
+    color: var(--font-color, #ccc);
+    line-height: 20px;
+    height: 20px;
+}
+.tooltip-up:hover::after, .tooltip-up:hover::before{top: var(--tooltip-up-position, -10px)}
+.tooltip-down:hover::after, .tooltip-down:hover::before{bottom: var(--tooltip-down-position, -20px)}
+.tooltip-up:hover::after{transform: translate(-50%,-29px)}
+.tooltip-down:hover::after{transform: translate(-50%, 22px)}
+/* Don't Change anything */
+
+*.darkmode[class*="tooltip"]:hover::after{
+    color: var(--dark-mode-color-font-color, rgb(233, 223, 168));
+}
