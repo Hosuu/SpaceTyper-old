@@ -143,19 +143,42 @@ body {
     background: #111;
 }
 
-
 ::-webkit-scrollbar {
     width: 5px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
+}
+
+/* Track */
+::-webkit-scrollbar-track {
     display: none;
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
     background: #888;
-    border-radius: 5px; 
-  }
-  
+    border-radius: 5px;
+}
+
+.settings-input-value{
+    display: inline-block;
+    text-align: center;
+    width: 100px;
+}
+.settings-inline-button{
+    display: inline-block;
+    background: rgba(68, 68, 68, 0.5);
+    padding: 0 10px;
+    border-radius: 15px;
+    cursor: pointer;
+}.settings-inline-button:hover{background: rgba(68, 68, 68, 0.8)}
+
+#settings-font-name{
+    background: #333;
+    border: none;
+    height: 29px;
+    width: 250px;
+    user-select: none;
+    outline: none;
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+}

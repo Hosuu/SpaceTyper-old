@@ -19,7 +19,8 @@ config = {
     text: {
         font: "Comfortaa",
         size: 24,
-        style: "bold italic",
+        bold: true,
+        italic: true,
     },
 
     stars: {
@@ -68,7 +69,8 @@ function tick() {
     }
     else
     {
-        ctx.font = `${config.text.style} ${config.text.size*2}px '${config.text.font}'`;
+        ctx.font = `${textStyle()}${config.text.size*2}px '${config.text.font}'`;
+        ctx.fillStyle = "#ccc";
         ctx.fillText('Type "start" to start the game', 620, 700);
         ctx.fillStyle = difficulty[config.game.difficulty].color;
         ctx.fillText("Difficulty: "+difficulty[config.game.difficulty].name, 750, 100);
@@ -110,6 +112,7 @@ function GameState(state)
 
         case "Gameover":
         GameStarted = false;
+        words=[];
         gameEndDate= Date.now();
 
         break;
@@ -120,4 +123,35 @@ function GameState(state)
         words=[];
         break;
     } 
+}
+
+function textStyle()
+{
+    let style = ""
+
+    if(config.text.bold)
+        style+="bold ";
+
+    if(config.text.italic)
+        style+="italic ";
+
+    return style;
+}
+
+function randomHexColor() {
+    let r = Math.floor(Math.random() * 255);
+    r = r.toString(16);
+    if (r.length == 1) r = "0" + r;
+
+    let g = Math.floor(Math.random() * 255);
+    g = g.toString(16);
+    if (g.length == 1) g = "0" + g;
+
+    let b = Math.floor(Math.random() * 255);
+    b = b.toString(16);
+    if (b.length == 1) b = "0" + b;
+
+    let hex = "#" + r + g + b;
+
+    return hex;
 }

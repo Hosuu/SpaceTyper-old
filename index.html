@@ -36,36 +36,62 @@
                 <div class="settings-divider"></div>
                 <div class="row">
                     <div class="settings-label">Game Difficulty: </div>
-                    <div class="settings-input">asd</div>
+                    <div class="settings-input">
+                        <div class="settings-inline-button" onclick="lowerdiff()"><i class="fas fa-angle-left"></i></div>
+                        <span id="settings-diff" class="settings-input-value">Easy </span>
+                        <div class="settings-inline-button" onclick="higherdiff()"><i class="fas fa-angle-right"></i></div>
+                    </div>
                     <div style="clear: both;"></div>
                 </div>
                 <div class="settings-divider"></div>
                 <div class="row">
                     <div class="settings-label">Font name: </div>
-                    <div class="settings-input">asd</div>
+                    <div class="settings-input"><input placeholder="Not working yet" id="settings-font-name"></div>
                     <div style="clear: both;"></div>
                 </div>
                 <div class="row">
                     <div class="settings-label">Font size: </div>
-                    <div class="settings-input">asd</div>
+                    <div class="settings-input">
+                            <div class="settings-inline-button" onclick="smallerfont()"><i class="fas fa-angle-left"></i></div>
+                            <span id="settings-font-size" class="settings-input-value">24px </span>
+                            <div class="settings-inline-button" onclick="biggerfont()"><i class="fas fa-angle-right"></i></div>
+                    </div>
                     <div style="clear: both;"></div>
                 </div>
                 <div class="row">
                     <div class="settings-label">Font style: </div>
-                    <div class="settings-input">asd</div>
+                    <div class="settings-input">
+                            <div id="settings-bold-style" class="settings-inline-button" onclick="settingsTogle('boldStyle')"><i class="fas fa-check"></i></div> Bold
+                            <div id="settings-italic-style" class="settings-inline-button" onclick="settingsTogle('italicStyle')"><i class="fas fa-check"></i></div> Italic
+                    </div>
                     <div style="clear: both;"></div>
                 </div>
                 <div class="settings-divider"></div>
                 <div class="row">
                     <div class="settings-label">Render Stars: </div>
-                    <div class="settings-input">asd</div>
+                    <div class="settings-input">
+                        <div id="settings-render-stars" class="settings-inline-button" onclick="settingsTogle('renderStars')"><i class="fas fa-check"></i></div>
+                    </div>
                     <div style="clear: both;"></div>
                 </div>
                 <div class="row">
                     <div class="settings-label">Stars count: </div>
-                    <div class="settings-input">asd</div>
+                    <div class="settings-input">
+                            <div class="settings-inline-button" onclick="starsCount(-50)"><i class="fas fa-angle-double-left"></i></div>
+                            <div class="settings-inline-button" onclick="starsCount(-10)"><i class="fas fa-angle-left"></i></div>
+                            <span id="settings-stars-count" class="settings-input-value">120 </span>
+                            <div class="settings-inline-button" onclick="starsCount(10)"><i class="fas fa-angle-right"></i></div>
+                            <div class="settings-inline-button" onclick="starsCount(50)"><i class="fas fa-angle-double-right"></i></div>
+                    </div>
                     <div style="clear: both;"></div>
                 </div>
+                <div class="row">
+                        <div class="settings-label">Rainbow Stars: </div>
+                        <div class="settings-input">
+                            <div id="settings-rainbow-stars" class="settings-inline-button" onclick="settingsTogle('rainbowStars')"><i class="fas fa-check"></i></div>
+                        </div>
+                        <div style="clear: both;"></div>
+                    </div>
             </div>
             <div class="settings-submit">
                     <div class="settings-label">
