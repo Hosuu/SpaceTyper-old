@@ -185,7 +185,7 @@ body {
     text-align: center;
 }
 
-#settings-background{
+.jscolor{
     border: none;
     display: block;
     outline: none; 

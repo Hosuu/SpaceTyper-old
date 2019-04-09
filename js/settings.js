@@ -21,6 +21,11 @@ function settingsDiff(value){
     $('#settings-diff').html(difficulty[config.game.difficulty].name);
 }
 
+$('#settings-font-name').change(function(){
+    config.text.font = $('#settings-font-name').val()
+    loadFont();
+});
+
 function settingsFontSize(value){
     config.text.size+=value;
     $('#settings-font-size').html(`${config.text.size}px`);
@@ -89,3 +94,54 @@ function settingsColor(jscolor, propery) {
     }
 }
 
+function reportBug()
+{
+    window.open("https://github.com/Hosuu/SpaceTyper/issues/new","_Blank")
+}
+
+function settingsDefault()
+{
+    config = {
+
+        game: {
+            difficulty: 0,
+            backgroundColor: "#050505",
+    
+        },
+    
+        text: {
+            font: "Comfortaa",
+            size: 24,
+            color: "#ccc",
+            highlightColor: "#f00",
+            bold: true,
+            italic: true,
+        },
+    
+        stars: {
+            render: true,
+            count: 120,
+            minSize: 4,
+            maxSize: 6,
+            color: "#ccc",
+            rainbow: false,
+        }
+    }
+
+    seetingsReload();
+}
+
+function seetingsReload()
+{
+    SettingsChecksUpdate();
+    settingsDiff(0);
+    settingsFontSize(0);
+    starsCount(0);
+    $('#settings-font-name').val(config.text.font);
+    document.getElementById('settings-background').jscolor.fromString(config.game.backgroundColor);
+    document.getElementById('settings-font-color').jscolor.fromString(config.text.color);
+    document.getElementById('settings-highlight').jscolor.fromString(config.text.highlightColor);
+    document.getElementById('settings-star-color').jscolor.fromString(config.stars.color);
+}
+
+setTimeout(()=>{seetingsReload();},100)

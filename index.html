@@ -25,7 +25,7 @@
     </div>
     <canvas id="game-screen" width="1920" height="820"></canvas>
     <div class="bar">
-        <div class="bar-item size-1">EMPTY SPACE</div>
+        <div class="bar-item size-1 button" onclick="reportBug()"><i class="fas fa-bug"></i> Report a bug</div>
         <div class="bar-item size-3"><span id="input"></span></div>
         <div class="bar-item size-1 button" onclick="showSettings()"><i class="fas fa-cogs"></i> Settings</div>
     </div>
@@ -52,10 +52,10 @@
                     <div style="clear: both;"></div>
                 </div>
                 <div class="settings-divider"></div>
-                <div class="row tooltip-up" tooltip="Changes words font (fonts.google.com also works)">
+                <div class="row tooltip-up" tooltip="Changes words font (fonts.google.com)">
                     <div class="settings-label">Font name: </div>
                     <div class="settings-input">
-                        <input placeholder="Not working yet" id="settings-font-name"></div>
+                        <input placeholder="name from google fonts" id="settings-font-name"></div>
                     <div style="clear: both;"></div>
                 </div>
                 <div class="row tooltip-up" tooltip="Change words font size">
@@ -78,14 +78,14 @@
                 <div class="row tooltip-up" tooltip="Change words font color (main color)">
                     <div class="settings-label">Color: </div>
                     <div class="settings-input">
-                        <input id="settings-background" value="ccc" class="jscolor {onFineChange:'settingsColor(this, `textColor`)', width:145, height:100, borderWidth:0, insetColor:'#000', backgroundColor:'#333'}">
+                        <input id="settings-font-color" value="ccc" class="jscolor {onFineChange:'settingsColor(this, `textColor`)', width:145, height:100, borderWidth:0, insetColor:'#000', backgroundColor:'#333'}">
                     </div>
                     <div style="clear: both;"></div>
                 </div>
                 <div class="row tooltip-up" tooltip="Change words font color (when close to end)">
                     <div class="settings-label">Highlight Color: </div>
                     <div class="settings-input">
-                        <input id="settings-background" value="f00" class="jscolor {onFineChange:'settingsColor(this, `textHighlightColor`)', width:145, height:100, borderWidth:0, insetColor:'#000', backgroundColor:'#333'}">
+                        <input id="settings-highlight" value="f00" class="jscolor {onFineChange:'settingsColor(this, `textHighlightColor`)', width:145, height:100, borderWidth:0, insetColor:'#000', backgroundColor:'#333'}">
                     </div>
                     <div style="clear: both;"></div>
                 </div>
@@ -118,7 +118,7 @@
                 <div class="row tooltip-up" tooltip="If disabled 'Rainbow Stars'">
                         <div class="settings-label">Stars color: </div>
                             <div class="settings-input">
-                                <input id="settings-background" value="fff" class="jscolor {onFineChange:'settingsColor(this, `starsColor`)', width:145, height:100, borderWidth:0, insetColor:'#000', backgroundColor:'#333'}">
+                                <input id="settings-star-color" value="fff" class="jscolor {onFineChange:'settingsColor(this, `starsColor`)', width:145, height:100, borderWidth:0, insetColor:'#000', backgroundColor:'#333'}">
                             </div>
                         <div style="clear: both;"></div>
                     </div>
