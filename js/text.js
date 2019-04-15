@@ -49,26 +49,20 @@ $(document).keydown(button => {
     }
 });
 
-function remove(word, point = false) {
-    for (let index = 0; index < words.length; index++) {
-        if (words[index].text == word) {
-            if (point) score += word.length;
-            words.splice(index, 1);
-            return;
-        }
-    }
-}
-
 function check(word) {
     if(input="start" && !GameStarted) GameState("Game");
     input = ""
-    remove(word, true);
+
+    if(words.find( ({text}) => text == word) != undefined ) {
+        words.splice(words.findIndex( ({text}) => text == word), 1);
+        score+=word.length;
+    }
     updateDisplay();
 }
 
 function wordPassed(element) {
     lives--;
-    remove(element.text);
+    words.splice(words.findIndex( ({text}) => text == element.text), 1);
     updateDisplay();
 }
 
